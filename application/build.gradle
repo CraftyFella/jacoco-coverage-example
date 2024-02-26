@@ -29,15 +29,6 @@ dependencies {
     implementation(project(":domain"))
 }
 
-reporting {
-    reports {
-        testCodeCoverageReport(JacocoCoverageReport) {
-            testType = TestSuiteType.UNIT_TEST
-
-        }
-    }
-}
-
 application {
     mainClass.set("com.mns.ApplicationKt")
 }
