@@ -10,6 +10,7 @@ repositories {
 
 dependencies {
     jacocoAggregation project(":application")
+    jacocoAggregation project(":another-test-suite")
 }
 
 reporting {
