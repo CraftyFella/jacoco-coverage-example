@@ -5,7 +5,7 @@ plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
     id("io.micronaut.minimal.library") version "4.2.1"
     id("io.micronaut.aot") version "4.2.1"
-    id 'jacoco-report-aggregation'
+    id 'jacoco'
 }
 
 version = "0.1"
@@ -26,10 +26,20 @@ dependencies {
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
     testImplementation("io.micronaut:micronaut-http-client")
+    testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
 java {
     sourceCompatibility = JavaVersion.toVersion("17")
+}
+
+micronaut {
+    runtime("netty")
+    testRuntime("junit5")
+    processing {
+        incremental(true)
+        annotations("com.mns.*")
+    }
 }
 
 

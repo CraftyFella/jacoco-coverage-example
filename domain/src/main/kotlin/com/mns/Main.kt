@@ -8,4 +8,7 @@ class HelloService {
     fun sayHi(): String {
         return "Hello"
     }
+    fun sayHi2(): String {
+        return "Hello2"
+    }
 }
