@@ -2,4 +2,5 @@ rootProject.name="coverage-test"
 
 include 'application'
 include 'domain'
+include 'other-tests'
 

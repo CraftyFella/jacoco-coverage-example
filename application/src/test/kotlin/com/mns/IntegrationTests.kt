@@ -7,7 +7,7 @@ import jakarta.inject.Inject
 import org.junit.jupiter.api.Test
 
 @MicronautTest
-class Test {
+class IntegrationTests {
 
     @Inject
     @field:Client("/")
