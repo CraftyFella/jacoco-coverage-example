@@ -12,7 +12,6 @@ dependencies {
 }
 
 reporting {
-
     reports {
         testCodeCoverageReport(JacocoCoverageReport) {
             testType = TestSuiteType.UNIT_TEST
@@ -21,13 +20,13 @@ reporting {
 }
 
 tasks.withType(JacocoReport) {
-    //executionData.setFrom project.fileTree(dir: "$rootDir", include: '**/build/jacoco/*.exec')
+    executionData.setFrom project.fileTree(dir: "$rootDir", include: '**/build/jacoco/*.exec')
     doLast {
-        println "JacocoReport: $executionData"
+        println "JacocoReport: $executionData.files"
     }
 }
 
 
 tasks.named('check') {
-    dependsOn tasks.named('testCodeCoverageReport', JacocoReport)
+    finalizedBy tasks.named('testCodeCoverageReport', JacocoReport)
 }
