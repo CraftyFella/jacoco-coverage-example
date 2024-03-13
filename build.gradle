@@ -1,5 +1,4 @@
 plugins {
-
     id 'base'
     id 'jacoco-report-aggregation'
 }
@@ -13,13 +12,21 @@ dependencies {
 }
 
 reporting {
+
     reports {
         testCodeCoverageReport(JacocoCoverageReport) {
             testType = TestSuiteType.UNIT_TEST
         }
     }
-
 }
+
+tasks.withType(JacocoReport) {
+    //executionData.setFrom project.fileTree(dir: "$rootDir", include: '**/build/jacoco/*.exec')
+    doLast {
+        println "JacocoReport: $executionData"
+    }
+}
+
 
 tasks.named('check') {
     dependsOn tasks.named('testCodeCoverageReport', JacocoReport)
