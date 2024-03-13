@@ -9,7 +9,7 @@ repositories {
 }
 
 dependencies {
-    jacocoAggregation project(":application")
+    //jacocoAggregation project(":application")
     jacocoAggregation project(":another-test-suite")
 }
 
