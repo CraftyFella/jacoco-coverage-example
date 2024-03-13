@@ -9,7 +9,6 @@ repositories {
 }
 
 dependencies {
-    //jacocoAggregation project(":application")
     jacocoAggregation project(":another-test-suite")
 }
 
@@ -19,6 +18,7 @@ reporting {
             testType = TestSuiteType.UNIT_TEST
         }
     }
+
 }
 
 tasks.named('check') {

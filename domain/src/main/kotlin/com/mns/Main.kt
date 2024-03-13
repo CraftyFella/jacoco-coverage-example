@@ -14,4 +14,8 @@ class HelloService {
     fun sayHi3(): String {
         return "Hello3"
     }
+
+    fun sayHi4(): String {
+        return "Hello4"
+    }
 }

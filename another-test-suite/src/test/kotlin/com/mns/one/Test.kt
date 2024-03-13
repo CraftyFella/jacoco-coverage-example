@@ -1,5 +1,6 @@
-package com.mns
+package com.mns.one
 
+import com.mns.HelloService
 import org.junit.jupiter.api.Test
 
 class Test3 {

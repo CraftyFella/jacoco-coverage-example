@@ -44,4 +44,20 @@ micronaut {
     }
 }
 
+tasks.register('testOne', Test) {
+    useJUnitPlatform()
+    exclude '**/two*'
+}
+
+tasks.register('testTwo', Test) {
+    useJUnitPlatform()
+    exclude '**/one*'
+}
+
+test {
+    useJUnitPlatform()
+    dependsOn testOne
+    dependsOn testTwo
+    exclude '**/mns/**'
+}
 
